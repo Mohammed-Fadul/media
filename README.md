@@ -1,5 +1,5 @@
 # Borehole-Dilution-Test
-
+Chinmayee Koodly ,Govanna Mosquera , Mohammed Fadul
 Link to git repository to get the code:
 
 ```
