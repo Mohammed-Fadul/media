@@ -123,9 +123,9 @@ The relation among the classes and functions are according to the following diag
 ![](Untitled Diagram.jpg)
 
 ### LOGGING FUNCTIONS
-```{admonition} Code Requirements
+Code Requirements
 Code Requirements: necessary to import the logging.
-```
+
 The `checker.py` is made of two functions:
 1. `log_parameters`: contains all the basic configurations of the logging;
 2. `logger`: this returns the function wrapper for the main() function that are going to execute logging messages throughout the code.
