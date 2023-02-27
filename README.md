@@ -39,8 +39,7 @@ Horizontal flow patterns in an aquifer are distorted by boreholes due to the wel
 effect is caused by convergence of the flow field due to contrasts in hydraulic conductivity between
 the aquifer and the inside of the well (Figure 7.2). A dimensionless correction factor $\alpha$ can be used
 to account for this distortion:
-
-                                         alpha = Qb/Qf
+![](alpha.jpg)
 
 ![](WellScreenEffect.jpg)
 
