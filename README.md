@@ -274,7 +274,7 @@ and the new files for the results and logging will be generated.
 
 **Fig 9*: New generated files*
 
-### Troubleshooting:
+### TROUBLESHOOTING
 This code is provided with many (safety) code lines that prevent your code run from crashing, for example division by zero errors, natural logarithms of negative values errors, etc. and the logging will provide you with details for each error,these errors are fixed within the code to provide the user with reliable results.
 
 Listed below are the major errors that you might run into:
