@@ -37,7 +37,7 @@ following analytical solution of the differential equation:
 
 Horizontal flow patterns in an aquifer are distorted by boreholes due to the well screen effect. This
 effect is caused by convergence of the flow field due to contrasts in hydraulic conductivity between
-the aquifer and the inside of the well . A dimensionless correction factor $\alpha$ can be used
+the aquifer and the inside of the well . A dimensionless correction factor alpha can be used
 to account for this distortion:
 ![](alpha.jpg)
 
@@ -45,13 +45,13 @@ to account for this distortion:
 
 *Fig 2: Illustration showing the flowlines around the well and the well screen effect*
 
-The correction factor $\alpha$ can be evaluated using potential theory as:
+The correction factor alpha can be evaluated using potential theory as:
 
 ![](eq3.jpg)
 
 with screen radii r1 and r2, screen permeability k1, and formation permeability k2. For simpilification,
 the dimensions of the gravel filter and the screen/filter tube can be neglected,
-and $\alpha = 2$. Considering:
+and alpha = 2. Considering:
 
 ![](eq4.jpg)
 
