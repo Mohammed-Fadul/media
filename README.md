@@ -45,8 +45,7 @@ to account for this distortion:
 $$\alpha = Q_{b}/Q{f}$$
 
 
-![alt text](https://github.com/Mohammed-Fadul/media/blob/1f13edbffc3d495676f5e8564559efb2529ebdd6/WellScreenEffect.jpg)
-
+![](WellScreenEffect.jpg)
 *Fig 2: Illustration showing the flowlines around the well and the well screen effect*
 
 The correction factor $\alpha$ can be evaluated using potential theory as:
@@ -123,7 +122,7 @@ velocity plots;
 
 The relation among the classes and functions are according to the following diagram:
 
-![alt text](https://github.com/Mohammed-Fadul/media/blob/a6d5d1b5823e1d292d988a7080570c4075761b29/Untitled%20Diagram.jpg)
+![](Untitled Diagram.jpg)
 
 ### LOGGING FUNCTIONS
 ```{admonition} Code Requirements
@@ -131,7 +130,7 @@ Code Requirements: necessary to import the logging.
 ```
 The `checker.py` is made of two functions:
 1. `log_parameters`: contains all the basic configurations of the logging;
-2. `logger`: this is a function wrapper for the main() function that are going to execute logging messages throughout the code.
+2. `logger`: this returns the function wrapper for the main() function that are going to execute logging messages throughout the code.
 
 **Note** - The logging information are going to be saved in the file `logfile.log`.
 
@@ -186,9 +185,22 @@ The provided sensors data is stored in the xlsx workbook **All_Data.xlsx** which
 
 In the excel file, the dilution time vs fluorescense table is located in the **Data DC** and **Data FC** sheet, giving information of each 
 sensor test. While, Flourescense vs Uranine table is located in the **DC calibration** and **FC calibration** sheet with the information of each sensor´s calibration. 
-* `Basefile`: checks if the file to be opened exists  
-* `DataSheet` & `CalibrationSheet`: Two small classes are written to check the if the right column names exist in calibration and data files for both sensors. If the 
-* `SensorPairData`: After reading from the excel files, the calibration data is checked for linear correlation and the coefficient of determination is calculated
+1. `Basefile`: checks if the file to be opened exists
+      * accepts a filepath string as input.
+      * Provides several properties to retrieve information about the file such as filename, parent directory, and extension.
+      * `__set_filepath()`: verifies that the specified file exists before creating a Path object to represent the file. 
+
+2. `DataSheet` & `CalibrationSheet`: Two small classes are written to check the if the right column names exist in calibration and data files for both sensors.
+      * They take in a Pandas DataFrame object (`data_dataframe`) and a list of column names, parameters, that should be present in the DataFrame. 
+      * The `__init__` method initializes the object by assigning the input parameters to the class variables `parameters` and `combined_data_dataframe`, and then calls the `__verify_parameters` method to ensure that all the column names specified in parameters are present in combined_data_dataframe.
+      * If any of the specified column names are not present, an exception is raised.
+      * The `__verify_parameters` method checks if each parameter in parameters is present in`combined_data_dataframe.columns`, and if not, raises an exception with an error message that specifies the invalid column names.
+
+3. `SensorPairData`: After reading from the excel files, the calibration data is checked for linear correlation and the coefficient of determination is calculated
+      * inherits from class `BaseFile`
+      * The SensorPairData class takes in a name and a filepath as input parameters, along with optional parameters specifying the names of different sheets in the             Excel file that contain data and calibration information. The `__init__` method initializes the object by assigning the input parameters to class             variables and then calling the `__read_sensor_excel` method to read the data and calibration sheets from the Excel file.
+      * `__read_sensor_excel`: reads the data and calibration sheets from the Excel file specified by filepath using Pandas read_excel method. It then creates instances of `DataSheet` and `CalibrationSheet` classes to store the data and calibration information, respectively.
+      * `check_calibration`: checks the calibration data for both FC and DC sensors by calling the `__check_sub_cal` method with the calibration data as input               * `__check_sub_cal` method calculates the coefficient of determination $R^2$ for the calibration data using linear regression and returns the regression equation for the calibration data in the form **y = mx + b**, where m is the slope and b is the y-intercept.
 
 ### PLOTS 
 ```{admonition} 
@@ -200,19 +212,18 @@ The `plotSensors2.py` contains three functions with different outputs each:
 
 1. `sensors_plot` - the parameters of this function are the calibration data from each type of sensor, in which returns the plot of flourescence vs uranine;
 
-![alt text](https://github.com/Mohammed-Fadul/media/blob/1f13edbffc3d495676f5e8564559efb2529ebdd6/SensorsPlot.png)
-
+![](SensorsPlot.png)
 **Fig 4*: Sensors Plot*
 
 2. `time_concentration_plot`- function that returs the plot of the Time vs Fluorescence for each sensor. The parameters are the tests results from each sensor.
 
-![alt text](https://github.com/Mohammed-Fadul/media/blob/1f13edbffc3d495676f5e8564559efb2529ebdd6/TimevsConcentration.png)
+![](TimevsConcentration.png)
 
 **Fig 5*: Time vs Fluorescence Plot*
 
 3. `velocity_plot` - function that returns the plot of Darcy´s Velocity vs Time vs Fluorescence concentration for each sensor. The parameters are also the tests results frome each sensors plus the calculated Darcy´s velocity. 
 
-![alt text](https://github.com/Mohammed-Fadul/media/blob/1f13edbffc3d495676f5e8564559efb2529ebdd6/VelocityvsConcentration.png)
+![](VelocityvsConcentration.png)
 
 **Fig 6*: Darcy´s Velocity vs Time vs Fluorescence Plot*
 
@@ -238,12 +249,10 @@ are excluded giving a 50% of range.
 3. After having all the necessary inputs, it is called `darcys_velocity_each_second` with the required parameters for each type of sensor;
 4. The `darcys_velocity_averaged` is executed with a logging message that allows to know which type of sensor is this Darcy´s velocity result;
 
-![alt text](https://github.com/Mohammed-Fadul/media/blob/5af71239841c4bf1abf50a0fa0eb77d416d22d93/seccessful_run.jpg)
-
+![](seccessful_run.jpg)
 **Fig 7*: Logging messages after running code*
 
-![alt text](https://github.com/Mohammed-Fadul/media/blob/5af71239841c4bf1abf50a0fa0eb77d416d22d93/final_results.jpg)
-
+![](final_results.jpg)
 **Fig 8*: Logging messages after running code*
 
 5. When successfully runned, the information is saved in a excel file named **Results.xlsx** that looks like this:
@@ -260,7 +269,7 @@ are excluded giving a 50% of range.
 6. Last, the plots are executed when calling the functions `velocity_plot`, `time_concentration_plot` and `sensors_plot` with the corrected parameters.
 and the new files for the results and logging will be generated.
 
-![alt text](https://github.com/Mohammed-Fadul/media/blob/5df8364cf511e0f014c6c672aee74ba4981d6af4/generatedfiles.jpg)
+![](generatedfiles.jpg)
 **Fig 9*: New generated files*
 
 ### Troubleshooting:
@@ -273,4 +282,5 @@ Listed below are the major errors that you might run into:
 3. Other errors (while the code is able to run); details can be found in the log file
 4. to make sure that your results are valid please check the generated curves and compare them with the samples provided in this README documentation or any previous tests that you trust.
 5. BaseFileERROR: if file does not exist or exists in a different name. Check the names of column and file names for spelling.
+
 
