@@ -22,7 +22,7 @@ The dilution rate of the tracer solution, which is assumed to be homogeneously d
 borehole volume V, can be described by a simple differential equation derived from a 0-dimensional
 balance in an ideal mixing reactor:
 
-$$ {V' \over V}({c \over c_{0}}) = {dc \over dt} $$
+![](eq1.jpg)
 
 with flux through the reactor $V' = {v_{app}}·F$, where vapp is the apparent dilution velocity (i.e., specific
 flux) in the borehole due to groundwater-flow (m/s) and F is the area perpendicular to the direction
@@ -31,11 +31,7 @@ initial concentrations c and co (kg/m<sup>3</sup>).
 Separating variables and applying an initial condition (instantaneous tracer injection) leads to the
 following analytical solution of the differential equation:
 
-$$ {c \over c_{0}} = exp({-v_{app}.F.t \over V}) $$
-
-or 
-
-$$ {v_{app}} = -{V \over F.t} ln({-v_{app}.F.t \over V}) $$
+![](eq2.jpg)
 
 
 Horizontal flow patterns in an aquifer are distorted by boreholes due to the well screen effect. This
@@ -43,26 +39,25 @@ effect is caused by convergence of the flow field due to contrasts in hydraulic 
 the aquifer and the inside of the well (Figure 7.2). A dimensionless correction factor $\alpha$ can be used
 to account for this distortion:
 
-$$\alpha = Q_{b}/Q{f}$$
-
+                                         alpha = Qb/Qf
 
 ![](WellScreenEffect.jpg)
 *Fig 2: Illustration showing the flowlines around the well and the well screen effect*
 
 The correction factor $\alpha$ can be evaluated using potential theory as:
 
-$$ {\alpha} = {4 \over {1 + ({r_{1} \over r_{2}})^2 + {k_{1} \over k_{2}}{[1 - ({r_{1} \over r_{2}})^2]}}} $$
+![](eq3.jpg)
 
 with screen radii r1 and r2, screen permeability k1, and formation permeability k2. For simpilification,
 the dimensions of the gravel filter and the screen/filter tube can be neglected,
 and $\alpha = 2$. Considering:
 
-$$ {v_{app}} = {v_{f} \alpha} $$
+![](eq4.jpg)
 
 with Darcy velocity vf and assuming other complicating factors related to insufficient mixing, vertical
 flow, density effects, etc. can be neglected, the following relationship follows:
 
-$$ {v_{f}} = -{V \over \alpha.F.t} ln{c \over c_{0}} $$
+![](eq5.jpg)
 
 
 ### Purpose and motivation
