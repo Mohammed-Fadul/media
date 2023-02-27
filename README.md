@@ -1,5 +1,5 @@
 # Borehole-Dilution-Test
-By; Chinmayee Koodly ,Govanna Mosquera , Mohammed Fadul
+By; Chinmayee Koodly ,Geovana Mosquera , Mohammed Fadul
 
 Link to git repository to get the code:
 
@@ -11,6 +11,7 @@ git clone https://github.com/Mohammed-Fadul/Borehole-Dilution-Test.git
 The borehole dilution test or point dilution test is a single-well technique for estimating horizontal flow velocity in the aquifer surrounding a well. The test is conducted by introducing a tracer into a well section and monitoring its decreasing concentration over time. A tracer is instantaneously injected into a borehole and is perfectly mixed within the borehole for the duration of testing in order to fulfil the ideal mixing condition. The mixing intensity should be adjusted to limit any turbulence it might induce to the well tube area and should not affect flow in the surrounding aquifer. The dilution of the tracer in the well due to the inflow of fresh water and the outflow of tracer-laced water from the well is then measured over time.
 
 ![](PrincipleBehindBDT.jpg)
+
 **Fig 1*: Principle behind borehole dilution test*
 
 Traditionally, the horizontal Darcy velocity is calculated as a function of the rate
@@ -42,6 +43,7 @@ to account for this distortion:
                                          alpha = Qb/Qf
 
 ![](WellScreenEffect.jpg)
+
 *Fig 2: Illustration showing the flowlines around the well and the well screen effect*
 
 The correction factor $\alpha$ can be evaluated using potential theory as:
@@ -209,6 +211,7 @@ The `plotSensors2.py` contains three functions with different outputs each:
 1. `sensors_plot` - the parameters of this function are the calibration data from each type of sensor, in which returns the plot of flourescence vs uranine;
 
 ![](SensorsPlot.png)
+
 **Fig 4*: Sensors Plot*
 
 2. `time_concentration_plot`- function that returs the plot of the Time vs Fluorescence for each sensor. The parameters are the tests results from each sensor.
@@ -246,9 +249,11 @@ are excluded giving a 50% of range.
 4. The `darcys_velocity_averaged` is executed with a logging message that allows to know which type of sensor is this Darcy´s velocity result;
 
 ![](seccessful_run.jpg)
+
 **Fig 7*: Logging messages after running code*
 
 ![](final_results.jpg)
+
 **Fig 8*: Logging messages after running code*
 
 5. When successfully runned, the information is saved in a excel file named **Results.xlsx** that looks like this:
@@ -266,6 +271,7 @@ are excluded giving a 50% of range.
 and the new files for the results and logging will be generated.
 
 ![](generatedfiles.jpg)
+
 **Fig 9*: New generated files*
 
 ### Troubleshooting:
