@@ -25,10 +25,10 @@ balance in an ideal mixing reactor:
 
 ![](eq1.jpg)
 
-with flux through the reactor $V' = {v_{app}}·F$, where vapp is the apparent dilution velocity (i.e., specific
+with flux through the reactor V' = v(app)·F, where v(app) is the apparent dilution velocity (i.e., specific
 flux) in the borehole due to groundwater-flow (m/s) and F is the area perpendicular to the direction
-of undisturbed flow (m<sup>2</sup>); volume in which dilution takes place V [m3]; time t [s]; and actual and
-initial concentrations c and co (kg/m<sup>3</sup>).
+of undisturbed flow; volume in which dilution takes place V [m3]; time t [s]; and actual and
+initial concentrations.
 Separating variables and applying an initial condition (instantaneous tracer injection) leads to the
 following analytical solution of the differential equation:
 
@@ -37,7 +37,7 @@ following analytical solution of the differential equation:
 
 Horizontal flow patterns in an aquifer are distorted by boreholes due to the well screen effect. This
 effect is caused by convergence of the flow field due to contrasts in hydraulic conductivity between
-the aquifer and the inside of the well (Figure 7.2). A dimensionless correction factor $\alpha$ can be used
+the aquifer and the inside of the well . A dimensionless correction factor $\alpha$ can be used
 to account for this distortion:
 ![](alpha.jpg)
 
