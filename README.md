@@ -230,10 +230,10 @@ The `plotSensors2.py` inherits the `plot_saver.py` which contains the function `
 
 
 ### DARCY´S VELOCITY CALCULATION 
-```{admonition} 
+
 Code Requirements: necessary to import pandas and math libraries, and to inherit functions from the tracertests, sensor_data_file, 
 plotSensors2 and checker. 
-```
+
 The Darcy´s velocity is calculated in the `main.py` script. In this file we can find: 
 * `darcys_velocity_each_second`: this function returns the data frame containing the final darcy´s velocity of each time. 
 It receives the field_data, the slope of the sensor´s equation and intercept of the sensor´s equation as parameters. 
