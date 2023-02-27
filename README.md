@@ -1,5 +1,5 @@
 # Borehole-Dilution-Test
-By; Chinmayee Koodly ,Geovana Mosquera , Mohammed Fadul
+*By; Chinmayee Koodly ,Geovana Mosquera , Mohammed Fadul
 
 Link to git repository to get the code:
 
@@ -201,10 +201,8 @@ sensor test. While, Flourescense vs Uranine table is located in the **DC calibra
       * `check_calibration`: checks the calibration data for both FC and DC sensors by calling the `__check_sub_cal` method with the calibration data as input               * `__check_sub_cal` method calculates the coefficient of determination $R^2$ for the calibration data using linear regression and returns the regression equation for the calibration data in the form **y = mx + b**, where m is the slope and b is the y-intercept.
 
 ### PLOTS 
-```{admonition} 
+
 Code Requirements: necessary to import logging, matplot and os libraries, and to inherit from the file plot_saver the function 
-save_plot.
-```
 
 The `plotSensors2.py` contains three functions with different outputs each: 
 
